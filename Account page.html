@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ditrimex</title>
+    <link href="Styles/styles.css" rel="stylesheet" />
+    <link href="Styles/homepageStyle.css" rel="stylesheet" />
+    <link href="Styles/slideshowStyle.css" rel="stylesheet" />
+    <link href="Styles/accountStyles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script>
+        //---------------------------------Header and Footer script-----------------------------------
+
+        function loadHeader() {
+            fetch("header.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("header-placeholder").innerHTML = data;
+                    // Apply CSS class after loading
+                    applyStickyClassToHeader();
+                })
+                .catch((error) =>
+                    console.error("Error loading header:", error)
+                );
+        }
+
+        function applyStickyClassToHeader() {
+            // Select the header element or elements that need to be sticky
+            const headerElement = document.querySelector("#header-placeholder .full-navbar");
+            if (headerElement) {
+                // Add the .full-navbar class
+                headerElement.classList.add("full-navbar");
+            }
+        }
+
+
+        document.addEventListener("DOMContentLoaded", loadHeader);
+
+        function loadFooter() {
+            fetch("footer.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById(
+                        "footer-placeholder"
+                    ).innerHTML = data;
+                })
+                .catch((error) =>
+                    console.error("Error loading footer:", error)
+                );
+        }
+
+        document.addEventListener("DOMContentLoaded", loadFooter);
+    </script>
+</head>
+<script src="//code.tidio.co/eadx3gwwzkudsrzjlp5zs41swbz8jhcg.js" async></script>
+<body>
+   <!-- --------------------------- Header manual ------------------------------------------- -->
+    
+    <div class="full-navbar">
+        <div class="topbar">
+            <a href="index.html">
+                <img src="Images/Ditrimex-logo-blue.svg" alt="Homepage" />
+            </a>
+            <div class="search-container">
+                <input type="text" class="search-field" placeholder="Search..." />
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <div class="dropdown">
+                <a href="Full%20Shop%20Page.html" class="dropbtn">
+                    Shop
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="eTCP%20RTU%20page.html">eTCP® RTU</a>
+                    <a href="eTCP%20Powder%20page.html">eTCP® Powder</a>
+                    <a href="eTCP%20TouchUpPen%20page.html">eTCP® Touch Up Pen</a>
+                </div>
+            </div>
+
+            <a href="About%20Ditrimex%20page.html">About Ditrimex</a>
+            <a href="About%20Products%20page.html">About Our Products</a>
+            <a href="Help%20and%20Contact%20page.html">Help & Contact</a>
+            <a href="Account%20page.html">Account</a>
+            <div class="navbar-right">
+                <button class="heart-button"></button>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn"> <i class="fa fa-sign-in"></i>
+                    <!-- Login icon -->
+                    Login
+                    <i class="fa fa-caret-down"></i></a>
+
+                <div class="dropdown-content">
+                    <div class="login-btn">
+                        <a href="Login%20page.html" class="login-link">Log in</a>
+                    </div>
+                    <div class="signup-link">
+                        <a href="Login%20page.html">
+                            Sign Up For Shop Features</a>
+                    </div>
+                    <hr class="dropdown-separator" />
+                    <!-- Separator -->
+                    <a href="Login%20page.html">Your account</a>
+                    <a href="Login%20page.html">Orders</a>
+                </div>
+            </div>
+
+            <button class="cart-button">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </div>
+    
+    
+    <!-- ---------------------------------- Header ------------------------------------------- -->
+    
+
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Are you sure you want to log out?</h2>
+            <div class="modal-btn-container">
+                <button id="confirmLogout" class="primary">Yes</button>
+                <button id="cancelLogout" class="secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <h2> this is a mockup for a logged user</h2>
+
+
+    <div class="wrapper">
+        <div class="account-section">
+            <div class="sidebar">
+                <a href="#profile" style="color: #005C96; background-color: white;">Profile</a>
+                <a href="Account%20address%20page.html">Address</a>
+                <a href="#settings">Settings</a>
+                <a href="#orders">Orders</a>
+                <button id="logout-button" class="logout-button">Logout</button>
+            </div>
+            <div class="container">
+                <h2>My Account</h2>
+                <form action="update_process.php" method="POST">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" class="important" required minlength="4" maxlength="20" pattern="[a-zA-Z0-9]+" title="Username must contain only letters and numbers (no spaces) and be between 4 and 20 characters long" placeholder="Enter a username between 4 and 20 characters containing only letters and numbers.">
+                        <div class="invalid-feedback" id="username-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Password:</label>
+                        <input type="text" id="password" name="password" class="important" required minlength="4" maxlength="20" pattern="[a-zA-Z0-9]+" title="Password must contain atleast 1 capital letter, 12 letters and 1 number" placeholder="Must contain atleast 1 capital letter, 12 letters and 1 number">
+                        <div class="invalid-feedback" id="username-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter a valid email address.">
+                        <div class="invalid-feedback" id="email-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" id="firstname" name="firstname" required placeholder="Enter your first name.">
+                        <div class="invalid-feedback" id="firstname-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" id="lastname" name="lastname" required placeholder="Enter your last name.">
+                        <div class="invalid-feedback" id="lastname-feedback"></div>
+                    </div>
+
+                    <div class="form-group button-container">
+                        <input type="submit" value="Update Information">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        //---------------------------------Log out confirm modal-----------------------------------
+        // Get the modal element
+        var modal = document.getElementById("logoutModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("logout-button");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("cancelLogout");
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Add event listener to confirm logout button
+        document.getElementById("confirmLogout").addEventListener("click", function() {
+            // Perform logout action here
+            alert("Logged out successfully!");
+            modal.style.display = "none";
+        });
+    </script>
+
+
+
+    <!-- ---------------------------------- footer ------------------------------------------- -->
+
+    <div id="footer-placeholder"></div>
+
+    <!-- ---------------------------------- footer ------------------------------------------- -->
+</body></html>
+
+    

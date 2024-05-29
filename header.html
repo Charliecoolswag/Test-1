@@ -1,0 +1,84 @@
+<!-- ---------------------------------- Header ------------------------------------------- -->
+<!doctype html>
+<html lang="en">
+    <body>
+        <!-- ---------------------------------- Header ------------------------------------------- -->
+<div class="full-navbar">
+        <div class="topbar">
+            <a href="index.html">
+                <img src="Images/Ditrimex-logo-blue.svg" alt="Homepage" />
+            </a>
+            <div class="search-container">
+                <input
+                    type="text"
+                    class="search-field"
+                    placeholder="Search..." />
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <div class="dropdown">
+                <a href="Full%20Shop%20Page.html" class="dropbtn">
+                    Shop
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="eTCP%20RTU%20page.html">eTCP® RTU</a>
+                    <a href="eTCP%20Powder%20page.html">eTCP® Powder</a>
+                    <a href="eTCP%20TouchUpPen%20page.html"
+                        >eTCP® Touch Up Pen</a
+                    >
+                </div>
+            </div>
+
+            <a href="About%20Ditrimex%20page.html">About Ditrimex</a>
+            <a href="About%20Products%20page.html">About Our Products</a>
+            <a href="Help%20and%20Contact%20page.html">Help & Contact</a>
+            <a href="Account%20page.html">Account</a>
+            <div class="navbar-right">
+                <button class="heart-button"></button>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn"> <i class="fa fa-sign-in"></i>
+                    <!-- Login icon -->
+                    Login
+                    <i class="fa fa-caret-down"></i></a> 
+                   
+                <div class="dropdown-content">
+                    <div class="login-btn">
+                        <a href="Login%20page.html" class ="login-link">Log in</a>
+                    </div>
+                    <div class="signup-link">
+                        <a href="Login%20page.html">
+                            Sign Up For Shop Features</a
+                        >
+                    </div>
+                    <hr class="dropdown-separator" />
+                    <!-- Separator -->
+                    <a href="Login%20page.html">Your account</a>
+                    <a href="Login%20page.html">Orders</a>
+                </div>
+            </div>
+
+            <button class="cart-button">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+</div>
+        <!-- ---------------------------------- Header ------------------------------------------- -->
+    </body>
+
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById("dropdownContent");
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        }
+    </script>
+</html>

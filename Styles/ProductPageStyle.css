@@ -1,0 +1,315 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: grid;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.product-details {
+
+    display: flex;
+}
+
+.product-image {
+    flex: 2;
+    max-width: 50%;
+    height: 50%;
+    margin-right: 50px;
+}
+
+.product-image img {
+    width: 30%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 3;
+}
+
+h1 {
+    margin-top: 30px;
+    color: #005C96;
+}
+
+
+
+.price-dropdown {
+    max-width: fit-content;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#price-select {
+    padding: 10px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    flex: 1;
+    /* Take up remaining space */
+}
+
+#price-select:hover {
+    border: 3px solid #005C96;
+    transition-duration: 0.03;
+    /* Change border color on hover */
+}
+
+
+.price-text {
+    margin-bottom: 20px;
+}
+
+.price-text p {
+    font-size: 16px;
+    /* Increased font size for better readability */
+    margin-bottom: 10px;
+}
+
+.price-list {
+    display: flex;
+}
+
+.price-list span {
+    margin-right: 10px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 10%;
+    padding: 5px;
+    /* Increased font size for better readability */
+}
+
+.price-per-liter {
+    flex: right;
+    color: #ff6600;
+    /* Different color for the price per liter */
+}
+
+
+  .price-list button {
+        font-size: 14px;
+        padding: 5px 10px;
+        margin: 5px;
+        border: 2px solid #005C96;
+        background-color: white;
+        color: #005C96;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .price-list button:hover {
+        background-color: #555;
+        color: white;
+    }
+
+    .price-list button:focus {
+        outline: none;
+    }
+
+
+
+.price-dropdown select {
+    width: 100%;
+    /* Make the dropdown full width */
+    padding: 10px;
+    /* Add padding for better spacing */
+    font-size: 19px;
+    /* Increased font size for better readability */
+}
+
+
+.add-to-cart-container-shoppage {
+    display: flex;
+}
+
+.quantity-buttons button {
+    padding: 9px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.quantity-buttons button:hover {
+    background-color: #003E67;
+}
+
+.quantity-buttons {
+    display: flex;
+    align-items: center;
+    /* margin-top: 10px; Remove this */
+}
+
+.quantity-buttons button {
+    background-color: lightgrey;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-buttons button:hover {
+    background-color: #555;
+    color: #fff;
+    /* Change background color on hover */
+}
+
+
+#quantity {
+    padding: 7.5px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.add-to-cart-shoppage {
+    margin-left: 20px;
+    /* Add space between divs */
+}
+
+.add-to-cart-btn-shoppage {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #005C96;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.add-to-cart-btn-shoppage:hover {
+    background-color: #003E67;
+    /* Darker shade of the primary color */
+}
+
+
+.register-btn-shoppage {
+    
+    margin-left: 10px;
+    margin: 15px auto;
+    padding: 10px 13%;
+    border-radius: 5px;
+    color: #005C96;
+    cursor: pointer;
+    border: 2px solid #ccc;
+}
+
+
+.register-btn-shoppage:hover {
+    border: 2px solid #005C96;
+    transition-duration: 0.03;
+    /* Change border color on hover */
+}
+
+
+
+.additional-info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+
+
+.description {
+    margin-bottom: 20px;
+    max-height: fit-content;
+    /* Set the height to 50% of its parent's height */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.description h2 {
+    margin-bottom: 20px;
+    color: 005C96;
+}
+
+.additional-info {
+    margin-bottom: 20px;
+}
+
+.additional-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.additional-buttons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two equal-width columns */
+    grid-column-gap: 10px;
+    /* Gap between columns */
+}
+
+
+.additional-buttons {
+    flex: 1;
+    margin-bottom: 10px;
+
+}
+
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.left-side-additional-button {
+    background-color: #005C96;
+    color: #fff;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 1px solid #005C96;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.right-side-additional-button {
+    background-color: #fff;
+    border: 1px solid #005C96;
+    color: #005C96;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+}
+
+/* Hover effect for both buttons */
+.left-side-additional-button:hover,
+.right-side-additional-button:hover {
+    background-color: #003E67;
+    /* Darker shade of the primary color */
+    color: #fff;
+    /* Text color */
+    border: 1px solid #003E67;
+    /* Border color */
+}

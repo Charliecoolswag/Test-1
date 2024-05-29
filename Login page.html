@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ditrimex</title>
+    <link href="Styles/styles.css" rel="stylesheet">
+    <link href="Styles/ProductPageStyle.css" rel="stylesheet" />
+    <link href="Styles/ProductThumbStyle.css" rel="stylesheet" />
+    <link href="Styles/loginPageStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<script src="//code.tidio.co/eadx3gwwzkudsrzjlp5zs41swbz8jhcg.js" async></script>
+<body>
+
+
+   <!-- --------------------------- Header manual ------------------------------------------- -->
+    
+    <div class="full-navbar">
+        <div class="topbar">
+            <a href="index.html">
+                <img src="Images/Ditrimex-logo-blue.svg" alt="Homepage" />
+            </a>
+            <div class="search-container">
+                <input type="text" class="search-field" placeholder="Search..." />
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <div class="dropdown">
+                <a href="Full%20Shop%20Page.html" class="dropbtn">
+                    Shop
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="eTCP%20RTU%20page.html">eTCP® RTU</a>
+                    <a href="eTCP%20Powder%20page.html">eTCP® Powder</a>
+                    <a href="eTCP%20TouchUpPen%20page.html">eTCP® Touch Up Pen</a>
+                </div>
+            </div>
+
+            <a href="About%20Ditrimex%20page.html">About Ditrimex</a>
+            <a href="About%20Products%20page.html">About Our Products</a>
+            <a href="Help%20and%20Contact%20page.html">Help & Contact</a>
+            <a href="Account%20page.html">Account</a>
+            <div class="navbar-right">
+                <button class="heart-button"></button>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn"> <i class="fa fa-sign-in"></i>
+                    <!-- Login icon -->
+                    Login
+                    <i class="fa fa-caret-down"></i></a>
+
+                <div class="dropdown-content">
+                    <div class="login-btn">
+                        <a href="Login%20page.html" class="login-link">Log in</a>
+                    </div>
+                    <div class="signup-link">
+                        <a href="Login%20page.html">
+                            Sign Up For Shop Features</a>
+                    </div>
+                    <hr class="dropdown-separator" />
+                    <!-- Separator -->
+                    <a href="Login%20page.html">Your account</a>
+                    <a href="Login%20page.html">Orders</a>
+                </div>
+            </div>
+
+            <button class="cart-button">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </div>
+    
+    
+    <!-- ---------------------------------- Header ------------------------------------------- -->
+    
+
+
+    <div class="wrapper">
+        <div class="login-container">
+            <div class="login-box">
+                <h1>Login</h1>
+                <form action="/login" method="POST">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="input-group checkbox-group">
+                        <input type="checkbox" id="keep-signed-in" name="keep-signed-in">
+                        <label for="keep-signed-in">Keep me signed in</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot your password?</a>
+                    <button type="submit" class="login-button">Login</button>
+                    <button id="register-button" type="button" class="register-button-login-page">Quick Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ----------------------------------Register Modal  ----------------------------------- -->
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" id="close">&times;</span>
+            <div id="signup-form" class="signup-form">
+                <form action="signup_process.php" method="POST">
+                    <h2>Sign Up to gain access to the shop</h2>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required minlength="4" maxlength="20" pattern="[a-zA-Z0-9]+" title="Username must contain only letters and numbers (no spaces) and be between 4 and 20 characters long" placeholder="Enter a username between 4 and 20 characters containing only letters and numbers." />
+                        <div class="invalid-feedback" id="username-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter a valid email address." />
+                        <div class="invalid-feedback" id="email-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" id="firstname" name="firstname" required placeholder="Enter your first name." />
+                        <div class="invalid-feedback" id="firstname-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" id="lastname" name="lastname" required placeholder="Enter your last name." />
+                        <div class="invalid-feedback" id="lastname-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name:</label>
+                        <input type="text" id="company" name="company" placeholder="Enter your company name." />
+                        <div class="invalid-feedback" id="company-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="vat">Company VAT:</label>
+                        <input type="text" id="vat" name="vat" placeholder="Enter your company VAT number." />
+                        <div class="invalid-feedback" id="vat-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <input type="text" id="country" name="country" required placeholder="Enter your country." />
+                        <div class="invalid-feedback" id="country-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required placeholder="Enter your address." />
+                        <div class="invalid-feedback" id="address-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" required placeholder="Enter your city." />
+                        <div class="invalid-feedback" id="city-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="postcode">Postcode:</label>
+                        <input type="text" id="postcode" name="postcode" required placeholder="Enter your postcode." />
+                        <div class="invalid-feedback" id="postcode-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="text" id="phone" name="phone" required placeholder="Enter your phone number." />
+                        <div class="invalid-feedback" id="phone-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="billingemail">Billing Email:</label>
+                        <input type="email" id="billingemail" name="billingemail" required placeholder="Enter your billing email address." />
+                        <div class="invalid-feedback" id="billingemail-feedback"></div>
+                    </div>
+                    <div class="form-group button-container">
+                        <button type="submit">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------------------------------Register Modal  ----------------------------------- -->
+
+
+    <section>
+
+    </section>
+
+
+
+
+
+    <!-- JavaScript for carousel -->
+    <script>
+        //------------------------------------------ Register Form -----------------------------------
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var registerButton = document.getElementById("register-button");
+            var modal = document.getElementById("modal");
+            var overlay = document.getElementById("overlay");
+            var closeButton = document.getElementById("close");
+
+            registerButton.addEventListener("click", function() {
+                modal.style.display = "block";
+                overlay.style.display = "block";
+            });
+
+            closeButton.addEventListener("click", function() {
+                modal.style.display = "none";
+                overlay.style.display = "none";
+            });
+
+            overlay.addEventListener("click", function() {
+                modal.style.display = "none";
+                overlay.style.display = "none";
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var signupForm = document.getElementById("signup-form");
+            var usernameInput = document.getElementById("username");
+            var emailInput = document.getElementById("email");
+            var firstnameInput = document.getElementById("firstname");
+            var lastnameInput = document.getElementById("lastname");
+            var companyInput = document.getElementById("company");
+            var vatInput = document.getElementById("vat");
+            var countryInput = document.getElementById("country");
+            var addressInput = document.getElementById("address");
+            var cityInput = document.getElementById("city");
+            var postcodeInput = document.getElementById("postcode");
+            var phoneInput = document.getElementById("phone");
+            var billingemailInput = document.getElementById("billingemail");
+
+            var inputs = [
+                usernameInput,
+                emailInput,
+                firstnameInput,
+                lastnameInput,
+                companyInput,
+                vatInput,
+                countryInput,
+                addressInput,
+                cityInput,
+                postcodeInput,
+                phoneInput,
+                billingemailInput
+            ];
+
+            var feedbacks = {
+                username: document.getElementById("username-feedback"),
+                email: document.getElementById("email-feedback"),
+                firstname: document.getElementById("firstname-feedback"),
+                lastname: document.getElementById("lastname-feedback"),
+                company: document.getElementById("company-feedback"),
+                vat: document.getElementById("vat-feedback"),
+                country: document.getElementById("country-feedback"),
+                address: document.getElementById("address-feedback"),
+                city: document.getElementById("city-feedback"),
+                postcode: document.getElementById("postcode-feedback"),
+                phone: document.getElementById("phone-feedback"),
+                billingemail: document.getElementById(
+                    "billingemail-feedback"
+                )
+            };
+
+            inputs.forEach(function(input) {
+                input.addEventListener("input", function(event) {
+                    var id = input.id;
+                    var feedback = feedbacks[id];
+                    if (!input.validity.valid) {
+                        if (input.validity.valueMissing) {
+                            feedback.textContent =
+                                "This field is required.";
+                        } else if (input.validity.typeMismatch) {
+                            feedback.textContent =
+                                "Please enter a valid email address.";
+                        } else if (input.validity.patternMismatch) {
+                            feedback.textContent = input.title;
+                        } else {
+                            feedback.textContent = "";
+                        }
+                    } else {
+                        feedback.textContent = "";
+                    }
+                });
+            });
+
+            signupForm.addEventListener("submit", function(event) {
+                inputs.forEach(function(input) {
+                    var id = input.id;
+                    var feedback = feedbacks[id];
+                    if (!input.validity.valid) {
+                        event.preventDefault(); // Prevent form submission if inputs are invalid
+                        if (input.validity.valueMissing) {
+                            feedback.textContent =
+                                "This field is required.";
+                        } else if (input.validity.typeMismatch) {
+                            feedback.textContent =
+                                "Please enter a valid email address.";
+                        } else if (input.validity.patternMismatch) {
+                            feedback.textContent = input.title;
+                        }
+                    }
+                });
+            });
+        });
+        //------------------------------------------ Register Form -----------------------------------
+        //---------------------------------     Picture Slides     -----------------------------------
+
+
+
+
+
+        //---------------------------------Header and Footer script-----------------------------------
+
+        function loadHeader() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        }
+
+        document.addEventListener('DOMContentLoaded', loadHeader);
+
+
+        function loadFooter() {
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        }
+
+        document.addEventListener('DOMContentLoaded', loadFooter);
+    </script>
+
+
+    <script src=header.js.txt></script>
+
+    <!-- ---------------------------------- footer ------------------------------------------- -->
+
+
+
+    <div id="footer-placeholder"></div>
+
+
+    <!-- ---------------------------------- footer ------------------------------------------- -->
+
+</body></html>

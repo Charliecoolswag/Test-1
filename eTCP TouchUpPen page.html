@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ditrimex</title>
+        <link href="Styles/styles.css" rel="stylesheet" />
+        <link href="Styles/ProductPageStyle.css" rel="stylesheet" />
+        <link href="Styles/ProductThumbStyle.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    </head>
+<script src="//code.tidio.co/eadx3gwwzkudsrzjlp5zs41swbz8jhcg.js" async></script>
+    <body>
+       <!-- --------------------------- Header manual ------------------------------------------- -->
+    
+    <div class="full-navbar">
+        <div class="topbar">
+            <a href="index.html">
+                <img src="Images/Ditrimex-logo-blue.svg" alt="Homepage" />
+            </a>
+            <div class="search-container">
+                <input type="text" class="search-field" placeholder="Search..." />
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <div class="dropdown">
+                <a href="Full%20Shop%20Page.html" class="dropbtn">
+                    Shop
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="eTCP%20RTU%20page.html">eTCP® RTU</a>
+                    <a href="eTCP%20Powder%20page.html">eTCP® Powder</a>
+                    <a href="eTCP%20TouchUpPen%20page.html">eTCP® Touch Up Pen</a>
+                </div>
+            </div>
+
+            <a href="About%20Ditrimex%20page.html">About Ditrimex</a>
+            <a href="About%20Products%20page.html">About Our Products</a>
+            <a href="Help%20and%20Contact%20page.html">Help & Contact</a>
+            <a href="Account%20page.html">Account</a>
+            <div class="navbar-right">
+                <button class="heart-button"></button>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn"> <i class="fa fa-sign-in"></i>
+                    <!-- Login icon -->
+                    Login
+                    <i class="fa fa-caret-down"></i></a>
+
+                <div class="dropdown-content">
+                    <div class="login-btn">
+                        <a href="Login%20page.html" class="login-link">Log in</a>
+                    </div>
+                    <div class="signup-link">
+                        <a href="Login%20page.html">
+                            Sign Up For Shop Features</a>
+                    </div>
+                    <hr class="dropdown-separator" />
+                    <!-- Separator -->
+                    <a href="Login%20page.html">Your account</a>
+                    <a href="Login%20page.html">Orders</a>
+                </div>
+            </div>
+
+            <button class="cart-button">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </div>
+    
+    
+    <!-- ---------------------------------- Header ------------------------------------------- -->
+    
+        <!-- ----------------------------------Register Modal  ----------------------------------- -->
+
+        <div class="overlay" id="overlay"></div>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close" id="close">&times;</span>
+                <div id="signup-form" class="signup-form">
+                    <form action="signup_process.php" method="POST">
+                        <h2>Sign Up to gain access to the shop</h2>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                required
+                                minlength="4"
+                                maxlength="20"
+                                pattern="[a-zA-Z0-9]+"
+                                title="Username must contain only letters and numbers (no spaces) and be between 4 and 20 characters long"
+                                placeholder="Enter a username between 4 and 20 characters containing only letters and numbers." />
+                            <div
+                                class="invalid-feedback"
+                                id="username-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                placeholder="Enter a valid email address." />
+                            <div
+                                class="invalid-feedback"
+                                id="email-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname">First Name:</label>
+                            <input
+                                type="text"
+                                id="firstname"
+                                name="firstname"
+                                required
+                                placeholder="Enter your first name." />
+                            <div
+                                class="invalid-feedback"
+                                id="firstname-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last Name:</label>
+                            <input
+                                type="text"
+                                id="lastname"
+                                name="lastname"
+                                required
+                                placeholder="Enter your last name." />
+                            <div
+                                class="invalid-feedback"
+                                id="lastname-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name:</label>
+                            <input
+                                type="text"
+                                id="company"
+                                name="company"
+                                placeholder="Enter your company name." />
+                            <div
+                                class="invalid-feedback"
+                                id="company-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="vat">Company VAT:</label>
+                            <input
+                                type="text"
+                                id="vat"
+                                name="vat"
+                                placeholder="Enter your company VAT number." />
+                            <div
+                                class="invalid-feedback"
+                                id="vat-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country:</label>
+                            <input
+                                type="text"
+                                id="country"
+                                name="country"
+                                required
+                                placeholder="Enter your country." />
+                            <div
+                                class="invalid-feedback"
+                                id="country-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input
+                                type="text"
+                                id="address"
+                                name="address"
+                                required
+                                placeholder="Enter your address." />
+                            <div
+                                class="invalid-feedback"
+                                id="address-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City:</label>
+                            <input
+                                type="text"
+                                id="city"
+                                name="city"
+                                required
+                                placeholder="Enter your city." />
+                            <div
+                                class="invalid-feedback"
+                                id="city-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="postcode">Postcode:</label>
+                            <input
+                                type="text"
+                                id="postcode"
+                                name="postcode"
+                                required
+                                placeholder="Enter your postcode." />
+                            <div
+                                class="invalid-feedback"
+                                id="postcode-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input
+                                type="text"
+                                id="phone"
+                                name="phone"
+                                required
+                                placeholder="Enter your phone number." />
+                            <div
+                                class="invalid-feedback"
+                                id="phone-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="billingemail">Billing Email:</label>
+                            <input
+                                type="email"
+                                id="billingemail"
+                                name="billingemail"
+                                required
+                                placeholder="Enter your billing email address." />
+                            <div
+                                class="invalid-feedback"
+                                id="billingemail-feedback"></div>
+                        </div>
+                        <div class="form-group button-container">
+                            <button type="submit">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- ----------------------------------Register Modal  ----------------------------------- -->
+
+        <section>
+            <div class="container">
+                <div class="product-details">
+                    <img
+                        src="Images/IMG_0332-1-rotated-1.jpeg"
+                        alt="etcp RTU"
+                        class="product-image" />
+                    <div class="product-info">
+                        <h1>eTCP® Touch Up Pen</h1>
+
+                        <p>
+                            <strong style="color: #005c96"
+                                >Touch up pens</strong
+                            >
+                            from CHEMEON's Enhanced chromium trivalent
+                            passivation products
+                        </p>
+                        <div class="price-text">
+                            <p>Sizes:</p>
+                            <div class="price-list">
+                                <button id="price-1">1 Pen</button>
+                                <button id="price-2">12 Pens</button>
+                            </div>
+                        </div>
+
+                        <div class="additional-info">
+                            <p>
+                                Choose 1 standard product or order several
+                                products for bunk discount
+                            </p>
+                        </div>
+
+                        <div class="price-dropdown">
+                            <select id="price-select">
+                                <option value="1">€119 EUR for 1 Pen</option>
+                                <option value="2">
+                                    €1248,00 EUR for 12 pens
+                                    <span class="price-per-liter"
+                                        >(€104 pr.pen)</span
+                                    >
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="add-to-cart-container-shoppage">
+                            <div class="quantity-buttons">
+                                <button id="decrement">-</button>
+                                <span id="quantity">1</span>
+                                <button id="increment">+</button>
+                            </div>
+                            <div class="add-to-cart-shoppage">
+                                <button
+                                    id="add-to-cart-shoppage"
+                                    class="add-to-cart-btn-shoppage">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                        <button
+                            id="register-button"
+                            class="register-btn-shoppage">
+                            Quick Register
+                        </button>
+
+                        <div class="description">
+                            <p>
+                                <strong style="color: #45163e"
+                                    >eTCP® pen</strong
+                                >
+                                from CHEMEON gives the surface a distinctive,
+                                easily identifiable color to ensure that the
+                                coating has been applied. The Touch UP Pen is an
+                                exceptional tool for both small repairs and
+                                complicated repairs and suited for repairing
+                                vehicles at sea, on land and in the air.
+                            </p>
+
+                            <p>
+                                <strong style="color: #45163e">eTCP®</strong>
+                                is a trivalent chemical conversion coating for
+                                aluminum alloys, magnesium, IVD aluminum, zinc
+                                and zinc alloys, zinc-nickel and cadmium.
+                            </p>
+
+                            <p>
+                                <strong style="color: #45163e"
+                                    >eTCP® Products</strong
+                                >
+                                gives a violet tint to bare metal which is an
+                                effective indicator for vehicle maintenance to
+                                know that your parts are coated.
+                            </p>
+                        </div>
+                        <div class="additional-info">
+                            <h2>Additional Information:</h2>
+                            <ul>
+                                <li><strong>Warranty:</strong> 1 year</li>
+                                <li><strong>Shipping:</strong> Europe</li>
+                                <li>
+                                    <strong>Returns:</strong> 30-day money-back
+                                    guarantee
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="additional-buttons-container">
+                            <div class="additional-buttons">
+                                <button class="left-side-additional-button">
+                                    Safety Data Sheet
+                                </button>
+                                <button class="right-side-additional-button">
+                                    Contact Us
+                                </button>
+                            </div>
+
+                            <div class="additional-buttons">
+                                <button class="left-side-additional-button">
+                                    Technical Data Sheet
+                                </button>
+                                <button class="right-side-additional-button">
+                                    FAQs
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1>Other eTCP® products</h1>
+        </section>
+
+        <section>
+            <div class="additional-buttons-container">
+                <div class="product">
+                    <a href="eTCP%20RTU%20page.html">
+                        <img
+                            src="Images/iStock-108126191-scaled-1.jpg"
+                            alt="Product Image" />
+                    </a>
+                    <h3 class="product-title">eTCP® RTU</h3>
+                    <p class="product-description">
+                        Ready to use liquid for quick passivation needs
+                    </p>
+                    <span class="product-price">Prices from: 104 € </span>
+                    <a href="eTCP%20RTU%20page.html"
+                        ><button class="see-product">See product page</button>
+                    </a>
+                    <button class="add-product">Quick add</button>
+                    <div class="price-thumb-dropdown">
+                        <select id="price-thumb-select">
+                            <option value="1-RTU">
+                                €104 EUR for 3.79 liters
+                            </option>
+                            <option value="2-RTU">
+                                €435 EUR for 18.93 liters (€23/L)
+                            </option>
+                            <option value="3-RTU">
+                                €2255 EUR for 208.20 liters(€11/L)
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <a href="eTCP%20Powder%20page.html">
+                        <img
+                            src="Images/Powder-227-kg_NY.png"
+                            alt="Product Image" />
+                    </a>
+                    <h3 class="product-title">eTCP® Powder</h3>
+                    <p class="product-description">
+                        Powder for use in your own passivation baths
+                    </p>
+                    <span class="product-price">Prices from: 83,49 €</span>
+                    <a href="eTCP%20Powder%20page.html">
+                        <button class="see-product">See product page</button>
+                    </a>
+                    <button class="add-product">Quick add</button>
+                    <div class="price-thumb-dropdown">
+                        <select id="price-thumb-select">
+                            <option value="83,49">
+                                €83,49 EUR for 0.15kg
+                                <span class="price-per-liter">(€557/kg)</span>
+                            </option>
+                            <option value="248,00">
+                                €248,00 EUR for 0.45kg
+                                <span class="price-per-liter">(€546/kg)</span>
+                            </option>
+                            <option value="1235">
+                                €1235,00 EUR for 2,27
+                                <span class="price-per-liter">(€544/kg)</span>
+                            </option>
+                            <option value="2250">
+                                €2250,00 EUR for 4.5kg
+                                <span class="price-per-liter">(€496/kg)</span>
+                            </option>
+                            <option value="435">
+                                €10.200,00 EUR for 22,68kg
+                                <span class="price-per-liter">(€449/kg)</span>
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Increment and Decrement Functionality
+            document
+                .getElementById("increment")
+                .addEventListener("click", function () {
+                    incrementValue();
+                });
+
+            document
+                .getElementById("decrement")
+                .addEventListener("click", function () {
+                    decrementValue();
+                });
+
+            function incrementValue() {
+                var quantityElement = document.getElementById("quantity");
+                var quantity = parseInt(quantityElement.textContent);
+                quantity++;
+                quantityElement.textContent = quantity;
+            }
+
+            function decrementValue() {
+                var quantityElement = document.getElementById("quantity");
+                var quantity = parseInt(quantityElement.textContent);
+                if (quantity > 1) {
+                    quantity--;
+                    quantityElement.textContent = quantity;
+                }
+            }
+
+            // Add to Cart Functionality
+            document
+                .getElementById("add-to-cart-shoppage")
+                .addEventListener("click", function () {
+                    var quantityElement = document.getElementById("quantity");
+                    var quantity = parseInt(quantityElement.textContent);
+                    var cartCountElement =
+                        document.getElementById("cart-count");
+                    var cartCount = parseInt(cartCountElement.textContent);
+                    cartCount += quantity;
+                    cartCountElement.textContent = cartCount;
+                });
+            //------------------------------------------ Register Form -----------------------------------
+
+            document.addEventListener("DOMContentLoaded", function () {
+                var registerButton = document.getElementById("register-button");
+                var modal = document.getElementById("modal");
+                var overlay = document.getElementById("overlay");
+                var closeButton = document.getElementById("close");
+
+                registerButton.addEventListener("click", function () {
+                    modal.style.display = "block";
+                    overlay.style.display = "block";
+                });
+
+                closeButton.addEventListener("click", function () {
+                    modal.style.display = "none";
+                    overlay.style.display = "none";
+                });
+
+                overlay.addEventListener("click", function () {
+                    modal.style.display = "none";
+                    overlay.style.display = "none";
+                });
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                var signupForm = document.getElementById("signup-form");
+                var usernameInput = document.getElementById("username");
+                var emailInput = document.getElementById("email");
+                var firstnameInput = document.getElementById("firstname");
+                var lastnameInput = document.getElementById("lastname");
+                var companyInput = document.getElementById("company");
+                var vatInput = document.getElementById("vat");
+                var countryInput = document.getElementById("country");
+                var addressInput = document.getElementById("address");
+                var cityInput = document.getElementById("city");
+                var postcodeInput = document.getElementById("postcode");
+                var phoneInput = document.getElementById("phone");
+                var billingemailInput = document.getElementById("billingemail");
+
+                var inputs = [
+                    usernameInput,
+                    emailInput,
+                    firstnameInput,
+                    lastnameInput,
+                    companyInput,
+                    vatInput,
+                    countryInput,
+                    addressInput,
+                    cityInput,
+                    postcodeInput,
+                    phoneInput,
+                    billingemailInput
+                ];
+
+                var feedbacks = {
+                    username: document.getElementById("username-feedback"),
+                    email: document.getElementById("email-feedback"),
+                    firstname: document.getElementById("firstname-feedback"),
+                    lastname: document.getElementById("lastname-feedback"),
+                    company: document.getElementById("company-feedback"),
+                    vat: document.getElementById("vat-feedback"),
+                    country: document.getElementById("country-feedback"),
+                    address: document.getElementById("address-feedback"),
+                    city: document.getElementById("city-feedback"),
+                    postcode: document.getElementById("postcode-feedback"),
+                    phone: document.getElementById("phone-feedback"),
+                    billingemail: document.getElementById(
+                        "billingemail-feedback"
+                    )
+                };
+
+                inputs.forEach(function (input) {
+                    input.addEventListener("input", function (event) {
+                        var id = input.id;
+                        var feedback = feedbacks[id];
+                        if (!input.validity.valid) {
+                            if (input.validity.valueMissing) {
+                                feedback.textContent =
+                                    "This field is required.";
+                            } else if (input.validity.typeMismatch) {
+                                feedback.textContent =
+                                    "Please enter a valid email address.";
+                            } else if (input.validity.patternMismatch) {
+                                feedback.textContent = input.title;
+                            } else {
+                                feedback.textContent = "";
+                            }
+                        } else {
+                            feedback.textContent = "";
+                        }
+                    });
+                });
+
+                signupForm.addEventListener("submit", function (event) {
+                    inputs.forEach(function (input) {
+                        var id = input.id;
+                        var feedback = feedbacks[id];
+                        if (!input.validity.valid) {
+                            event.preventDefault(); // Prevent form submission if inputs are invalid
+                            if (input.validity.valueMissing) {
+                                feedback.textContent =
+                                    "This field is required.";
+                            } else if (input.validity.typeMismatch) {
+                                feedback.textContent =
+                                    "Please enter a valid email address.";
+                            } else if (input.validity.patternMismatch) {
+                                feedback.textContent = input.title;
+                            }
+                        }
+                    });
+                });
+            });
+            //------------------------------------------ Register Form -----------------------------------
+
+            //--------------------------------------Product and pricelist -----------------------------------
+
+            // Function to update the price select and the displayed price based on the clicked button
+            function updatePriceSelect(value) {
+                const priceSelect = document.getElementById("price-select");
+                priceSelect.value = value;
+
+                // Optionally dispatch a change event if needed
+                priceSelect.dispatchEvent(new Event("change"));
+
+                // Update the displayed price list (optional, if you want to reflect the selection in another element)
+                const priceText = {
+                    1: "€119 EUR for 1 Pen",
+                    2: "€1248,00 EUR for 12 pens"
+                };
+
+                document.getElementById("selected-price-display").textContent =
+                    priceText[value];
+            }
+
+            // Add event listeners to each price button
+            document
+                .getElementById("price-1")
+                .addEventListener("click", () => updatePriceSelect("1"));
+            document
+                .getElementById("price-2")
+                .addEventListener("click", () => updatePriceSelect("2"));
+
+            // Optional: Display the currently selected price
+            document
+                .getElementById("price-select")
+                .addEventListener("change", (event) => {
+                    const selectedOption = event.target.value;
+                    updatePriceSelect(selectedOption);
+                });
+
+            //--------------------------------------Product and pricelist -----------------------------------
+            function loadHeader() {
+                fetch("header.html")
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById(
+                            "header-placeholder"
+                        ).innerHTML = data;
+                    })
+                    .catch((error) =>
+                        console.error("Error loading header:", error)
+                    );
+            }
+
+            document.addEventListener("DOMContentLoaded", loadHeader);
+
+            function loadFooter() {
+                fetch("footer.html")
+                    .then((response) => response.text())
+                    .then((data) => {
+                        document.getElementById(
+                            "footer-placeholder"
+                        ).innerHTML = data;
+                    })
+                    .catch((error) =>
+                        console.error("Error loading footer:", error)
+                    );
+            }
+
+            document.addEventListener("DOMContentLoaded", loadFooter);
+        </script>
+    </body>
+
+    <!-- ---------------------------------- footer ------------------------------------------- -->
+
+    <div id="footer-placeholder"></div>
+
+    <!-- ---------------------------------- footer ------------------------------------------- -->
+</html>

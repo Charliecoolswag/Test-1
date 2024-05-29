@@ -1,0 +1,86 @@
+/* CSS for carousel */
+.carousel {
+    display: flex;
+    justify-content: center;
+    /* Center the carousel horizontally */
+    overflow: hidden;
+    /* Hide the scrollbar */
+    margin-bottom: 20px;
+}
+
+.review {
+    flex: 0 0 auto;
+    width: 280px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.star-box {
+    width: 20px;
+    height: 20px;
+    background-color: #2ecc71;
+    margin: 0 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    /* Sharp edges */
+    border: 1px solid #2ecc71;
+    /* Green border */
+}
+
+.star {
+    font-size: 14px;
+    color: white;
+}
+
+.star::before {
+    content: "★";
+}
+
+.star1::before {
+    content: "★";
+}
+
+.star2::before {
+    content: "★";
+}
+
+.star3::before {
+    content: "★";
+}
+
+.star4::before {
+    content: "★";
+}
+
+.star5::before {
+    content: "★";
+}
+
+
+/*------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------- */

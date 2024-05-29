@@ -1,0 +1,84 @@
+// header.js
+
+function openModal() {
+    var modal = document.getElementById("modal");
+    var overlay = document.getElementById("overlay");
+    
+    modal.style.display = "block";
+    overlay.style.display = "block";
+}
+
+function closeModal() {
+    var modal = document.getElementById("modal");
+    var overlay = document.getElementById("overlay");
+    
+    modal.style.display = "none";
+    overlay.style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var registerButton = document.getElementById("register-button");
+    var modal = document.getElementById("modal");
+    var overlay = document.getElementById("overlay");
+    var closeButton = document.getElementById("close");
+
+    registerButton.addEventListener("click", openModal);
+    closeButton.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var signupForm = document.getElementById("signup-form");
+    var inputs = signupForm.querySelectorAll("input");
+    var feedbacks = {
+        username: document.getElementById("username-feedback"),
+        email: document.getElementById("email-feedback"),
+        firstname: document.getElementById("firstname-feedback"),
+        lastname: document.getElementById("lastname-feedback"),
+        company: document.getElementById("company-feedback"),
+        vat: document.getElementById("vat-feedback"),
+        country: document.getElementById("country-feedback"),
+        address: document.getElementById("address-feedback"),
+        city: document.getElementById("city-feedback"),
+        postcode: document.getElementById("postcode-feedback"),
+        phone: document.getElementById("phone-feedback"),
+        billingemail: document.getElementById("billingemail-feedback")
+    };
+
+    inputs.forEach(function(input) {
+        input.addEventListener("input", function(event) {
+            var id = input.id;
+            var feedback = feedbacks[id];
+            if (!input.validity.valid) {
+                if (input.validity.valueMissing) {
+                    feedback.textContent = "This field is required.";
+                } else if (input.validity.typeMismatch) {
+                    feedback.textContent = "Please enter a valid email address.";
+                } else if (input.validity.patternMismatch) {
+                    feedback.textContent = input.title;
+                } else {
+                    feedback.textContent = "";
+                }
+            } else {
+                feedback.textContent = "";
+            }
+        });
+    });
+
+    signupForm.addEventListener("submit", function(event) {
+        inputs.forEach(function(input) {
+            var id = input.id;
+            var feedback = feedbacks[id];
+            if (!input.validity.valid) {
+                event.preventDefault(); // Prevent form submission if inputs are invalid
+                if (input.validity.valueMissing) {
+                    feedback.textContent = "This field is required.";
+                } else if (input.validity.typeMismatch) {
+                    feedback.textContent = "Please enter a valid email address.";
+                } else if (input.validity.patternMismatch) {
+                    feedback.textContent = input.title;
+                }
+            }
+        });
+    });
+});

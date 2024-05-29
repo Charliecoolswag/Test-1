@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ditrimex</title>
+    <link href="Styles/styles.css" rel="stylesheet" />
+    <link href="Styles/homepageStyle.css" rel="stylesheet" />
+    <link href="Styles/ProductThumbStyle.css" rel="stylesheet" />
+    <link href="Styles/slideshowStyle.css" rel="stylesheet" />
+    <link href="Styles/accountStyles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<script src="//code.tidio.co/eadx3gwwzkudsrzjlp5zs41swbz8jhcg.js" async></script>
+<body>
+<!-- --------------------------- Header manual ------------------------------------------- -->
+    
+    <div class="full-navbar">
+        <div class="topbar">
+            <a href="index.html">
+                <img src="Images/Ditrimex-logo-blue.svg" alt="Homepage" />
+            </a>
+            <div class="search-container">
+                <input type="text" class="search-field" placeholder="Search..." />
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <div class="dropdown">
+                <a href="Full%20Shop%20Page.html" class="dropbtn">
+                    Shop
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="eTCP%20RTU%20page.html">eTCP® RTU</a>
+                    <a href="eTCP%20Powder%20page.html">eTCP® Powder</a>
+                    <a href="eTCP%20TouchUpPen%20page.html">eTCP® Touch Up Pen</a>
+                </div>
+            </div>
+
+            <a href="About%20Ditrimex%20page.html">About Ditrimex</a>
+            <a href="About%20Products%20page.html">About Our Products</a>
+            <a href="Help%20and%20Contact%20page.html">Help & Contact</a>
+            <a href="Account%20page.html">Account</a>
+            <div class="navbar-right">
+                <button class="heart-button"></button>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" class="dropbtn"> <i class="fa fa-sign-in"></i>
+                    <!-- Login icon -->
+                    Login
+                    <i class="fa fa-caret-down"></i></a>
+
+                <div class="dropdown-content">
+                    <div class="login-btn">
+                        <a href="Login%20page.html" class="login-link">Log in</a>
+                    </div>
+                    <div class="signup-link">
+                        <a href="Login%20page.html">
+                            Sign Up For Shop Features</a>
+                    </div>
+                    <hr class="dropdown-separator" />
+                    <!-- Separator -->
+                    <a href="Login%20page.html">Your account</a>
+                    <a href="Login%20page.html">Orders</a>
+                </div>
+            </div>
+
+            <button class="cart-button">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </div>
+    
+    
+    <!-- ---------------------------------- Header ------------------------------------------- -->
+    
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Are you sure you want to log out?</h2>
+            <div class="modal-btn-container">
+                <button id="confirmLogout" class="primary">Yes</button>
+                <button id="cancelLogout" class="secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <h2> this is a mockup for a logged user</h2>
+
+
+    <div class="wrapper">
+        <div class="account-section">
+            <div class="sidebar">
+                <a href="Account%20page.html">Profile</a>
+                <a href="Account%20address%20page.html" style="color: #005C96; background-color: white;">Address</a>
+                <a href="#settings">Settings</a>
+                <a href="#orders">Orders</a>
+                <button id="logout-button" class="logout-button">Logout</button>
+            </div>
+            <div class="container">
+                <h2>My Account</h2>
+                <div class="form-group">
+                    <label for="company">Company Name:</label>
+                    <input type="text" id="company" name="company" placeholder="Enter your company name.">
+                    <div class="invalid-feedback" id="company-feedback"></div>
+                </div>
+                <div class="form-group">
+                    <label for="vat">Company VAT:</label>
+                    <input type="text" id="vat" name="vat" placeholder="Enter your company VAT number.">
+                    <div class="invalid-feedback" id="vat-feedback"></div>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" required placeholder="Enter your country.">
+                    <div class="invalid-feedback" id="country-feedback"></div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required placeholder="Enter your address.">
+                    <div class="invalid-feedback" id="address-feedback"></div>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required placeholder="Enter your city.">
+                    <div class="invalid-feedback" id="city-feedback"></div>
+                </div>
+                <div class="form-group">
+                    <label for="postcode">Postcode:</label>
+                    <input type="text" id="postcode" name="postcode" required placeholder="Enter your postcode.">
+                    <div class="invalid-feedback" id="postcode-feedback"></div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" required placeholder="Enter your phone number.">
+                    <div class="invalid-feedback" id="phone-feedback"></div>
+                </div>
+                <div class="form-group">
+                    <label for="billingemail">Billing Email:</label>
+                    <input type="email" id="billingemail" name="billingemail" required placeholder="Enter your billing email address.">
+                    <div class="invalid-feedback" id="billingemail-feedback"></div>
+                </div>
+                <div class="form-group button-container">
+                    <input type="submit" value="Update Information">
+                    <input type="button" value="Logout" class="logout-button">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //---------------------------------Header and Footer script-----------------------------------
+
+        function loadHeader() {
+            fetch("header.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById(
+                        "header-placeholder"
+                    ).innerHTML = data;
+                })
+                .catch((error) =>
+                    console.error("Error loading header:", error)
+                );
+        }
+
+        document.addEventListener("DOMContentLoaded", loadHeader);
+
+        function loadFooter() {
+            fetch("footer.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById(
+                        "footer-placeholder"
+                    ).innerHTML = data;
+                })
+                .catch((error) =>
+                    console.error("Error loading footer:", error)
+                );
+        }
+
+        document.addEventListener("DOMContentLoaded", loadFooter);
+    </script>
+    <script>
+        //---------------------------------Log out confirm modal-----------------------------------
+        // Get the modal element
+        var modal = document.getElementById("logoutModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("logout-button");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("cancelLogout");
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Add event listener to confirm logout button
+        document.getElementById("confirmLogout").addEventListener("click", function() {
+            // Perform logout action here
+            alert("Logged out successfully!");
+            modal.style.display = "none";
+        });
+    </script>
+    <script src="header.js.txt"></script>
+
+    <!-- ---------------------------------- footer ------------------------------------------- -->
+
+    <div id="footer-placeholder"></div>
+
+    <!-- ---------------------------------- footer ------------------------------------------- -->
+</body></html>
